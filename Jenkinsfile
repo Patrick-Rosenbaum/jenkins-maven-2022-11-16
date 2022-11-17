@@ -5,7 +5,7 @@ pipeline {
       jdk 'Java' 
     }
     stages {
-        stage('Hello') {
+        stage('build') {
             steps {
                 echo " Die BuildID lautet: '$BUILD_ID'  Jobname ist: '$JOB_NAME'  Build mit der Nummer '$BUILD_NUMBER' wird gebaut "
                 sh '''
@@ -15,7 +15,7 @@ pipeline {
                 '''
             }
         }
-        stage('Test') {
+        stage('test') {
             steps {
                 sh '''
                 ls
