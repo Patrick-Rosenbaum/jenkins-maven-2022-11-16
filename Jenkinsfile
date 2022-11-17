@@ -3,7 +3,13 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                sh "echo 'Hello World'"
+                echo 'Building..'
+                sh 'mvn package'
+                sh '''
+                cd target
+                dir
+                '''
+
             }
         }
     }
