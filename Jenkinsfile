@@ -15,5 +15,14 @@ pipeline {
                 '''
             }
         }
+        stage('Test') {
+            steps {
+                sh '''
+                ls
+                cd target
+                mvn test
+                '''
+            }
+        }
     }
 }

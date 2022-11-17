@@ -68,6 +68,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>maven-demo</finalName>
     </build>
 
 </project>
