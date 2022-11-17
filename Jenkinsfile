@@ -7,9 +7,8 @@ pipeline {
                 sh 'mvn package'
                 sh '''
                 cd target
-                dir
+                ls
                 '''
-
             }
         }
     }
