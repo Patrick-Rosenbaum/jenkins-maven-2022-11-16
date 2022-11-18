@@ -1,9 +1,12 @@
 pipeline {
-    agent any
-        tools { 
-      maven 'Apache Maven 3.8.6' 
-      jdk 'Java' 
+    agent {
+        docker {
+            image "maven:3.8.6-openjdk-18"
+        }
     }
+        /* tools { 
+      maven 'Apache Maven 3.8.6' 
+      jdk 'Java' } */ 
     stages {
         stage('build') {
             steps {
