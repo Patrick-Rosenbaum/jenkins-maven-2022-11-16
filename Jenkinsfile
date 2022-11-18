@@ -22,7 +22,7 @@ pipeline {
             steps {
                 sh '''
                 ls
-                cd target
+                cd ..
                 mvn test
                 '''
             }
