@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image "maven:3.8.6-eclipse-temurin-17-alpine"
-        }
-    }
+    agent any
         /* tools { 
       maven 'Apache Maven 3.8.6' 
       jdk 'Java' } */ 
@@ -21,7 +17,7 @@ pipeline {
         }
         stage('dockerfile') {
             steps {
-                app = docker.build("maven-projekt:0.1")
+                
             }
         }
     }
