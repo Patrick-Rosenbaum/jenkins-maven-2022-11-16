@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image "maven:3.8.6-openjdk-18"
+            image "maven:3.8.6-eclipse-temurin-17-alpine"
         }
     }
         /* tools { 
@@ -17,6 +17,14 @@ pipeline {
         stage('test') {
             steps {
                 sh 'mvn test'
+            }
+        }
+        stage('dockerfile') {
+            steps {
+                sh '''
+                docker build . -t maven-projekt:0.1
+                docker run maven-projekt:01
+                '''
             }
         }
     }
