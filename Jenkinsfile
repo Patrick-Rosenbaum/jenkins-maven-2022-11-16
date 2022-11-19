@@ -3,7 +3,6 @@ pipeline {
         docker {
             image "maven:3.8.6-eclipse-temurin-17-alpine"
         }
-        dockerfile true
     }
         /* tools { 
       maven 'Apache Maven 3.8.6' 
@@ -22,10 +21,7 @@ pipeline {
         }
         stage('dockerfile') {
             steps {
-                sh '''
-                docker build . -t maven-projekt:0.1
-                docker run maven-projekt:01
-                '''
+                app = docker.build("maven-projekt:0.1")
             }
         }
     }
