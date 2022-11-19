@@ -3,6 +3,7 @@ pipeline {
         docker {
             image "maven:3.8.6-eclipse-temurin-17-alpine"
         }
+        dockerfile true
     }
         /* tools { 
       maven 'Apache Maven 3.8.6' 
