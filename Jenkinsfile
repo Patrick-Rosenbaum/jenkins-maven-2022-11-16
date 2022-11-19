@@ -1,9 +1,9 @@
 pipeline {
-    agent {
+    agent any /*{
         docker { 
             image 'maven:3.8.6-eclipse-temurin-17-alpine' 
             }
-        }
+        }*/
     stages {
         stage('build') {
             steps {
@@ -13,19 +13,16 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh '''
-                mvn test
-                docker build . -t maven-demo:01
-                '''
+                sh 'mvn test'
             }
         }
-        /*stage('dockerfile') {
+        stage('dockerfile') {
             steps {
                 sh '''
-                
+                docker build . -t maven-demo:01
                 docker run maven-demo:01
                 '''
             }
-        }*/
+        }
     }
 }
