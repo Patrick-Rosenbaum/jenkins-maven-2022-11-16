@@ -23,7 +23,7 @@ pipeline {
         stage('dockerfile') {
             steps {
                 sh '''
-                docker build . -t maven-demo:01
+                docker build -t maven-demo:01 .
                 docker run maven-demo:01
                 '''
             }
