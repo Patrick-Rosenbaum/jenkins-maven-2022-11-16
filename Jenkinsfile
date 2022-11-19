@@ -17,7 +17,10 @@ pipeline {
         }
         stage('dockerfile') {
             steps {
-                
+                sh '''
+                docker build . -t maven-demo:0.1
+                docker run maven-demo:01
+                '''
             }
         }
     }
