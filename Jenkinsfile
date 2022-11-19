@@ -13,16 +13,19 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh 'mvn test'
-            }
-        }
-        stage('dockerfile') {
-            steps {
                 sh '''
+                mvn test
                 docker build . -t maven-demo:01
-                docker run maven-demo:01
                 '''
             }
         }
+        /*stage('dockerfile') {
+            steps {
+                sh '''
+                
+                docker run maven-demo:01
+                '''
+            }
+        }*/
     }
 }
