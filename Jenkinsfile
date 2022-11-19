@@ -4,9 +4,9 @@ pipeline {
             image 'maven:3.8.6-eclipse-temurin-17-alpine' 
             }
         }
-        /* tools { 
-      maven 'Apache Maven 3.8.6' 
-      jdk 'Java' } */ 
+        tools { 
+            docker 'myDocker'
+      }
     stages {
         stage('build') {
 
